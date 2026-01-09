@@ -189,10 +189,10 @@ group by all;
 ### EPA: Missouri Flood Plains
 
 ```sql
-// 1. Combine the floodplain data with geography characteristics to get us some info about that location
-// NOTE:
-// g.geo_id = geoId/29510127400   --- data is tract level only (one level above block group)
-// x.bgrp   =       295101013001  --- data is block group level
+-- 1. Combine the floodplain data with geography characteristics to get us some info about that location
+-- NOTE:
+-- g.geo_id = geoId/29510127400   --- data is tract level only (one level above block group)
+-- x.bgrp   =       295101013001  --- data is block group level
 
 select 
     x.*, g.*
