@@ -36,6 +36,10 @@ You can read more about the event here:
 * **07_moflood2.sql**
     * Flood data from EPA
     * Extracted from NFHL data and loaded to `SLMO_FLOODPLAIN` table
+* **08_storm1.sql**
+    * Storm damage data collected through NOAA and available through the NOAA DAT
+    * https://apps.dat.noaa.gov/StormDamage/DamageViewer/?cw=rlx&level=8&center=-81.39,38.54
+    * Manually filtered and downloaded and then parsed in Snowflake
 * **99_reference.sql**
     * Replication of `GEOGRAPHY` tables from Snowflake Public Data
     * Inclusion of all ARCHDATA_CIVIC tables in data share
@@ -203,4 +207,24 @@ where
     g.RELATIONSHIP_TYPE = 'coordinates_geojson'
 order by
     x.bgrp;
+```
+
+### NOAA: Storm Damage Report
+
+```sql
+-- 1. Estimate percent damage using Snowflake AI
+with dods as (
+    select degree_of_damage, count(*)
+    from noaa_dat
+    group by all
+)
+select
+    degree_of_damage,
+    AI_COMPLETE(
+        'claude-4-sonnet',
+        CONCAT(
+            'Convert this tornado damage description into a single decimal percentage (0.0 to 1.0) ',
+            'representing the severity of structural destruction. Return ONLY the number. ',
+            'Description: ', degree_of_damage))::NUMBER(3,2) AS damage_estimate
+from dods;
 ```
