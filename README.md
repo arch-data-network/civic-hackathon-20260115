@@ -27,9 +27,9 @@ You can read more about the event here:
 * **05_usace1.sql**
     * Radiological Site Status Maps
     * Data extracted from Appendix tables in PDF file (not super clean)
-    * Saved into tables named FUSRAP_TABLE_<page>_<table> for pages 262-501
+    * Saved into tables named `FUSRAP_TABLE_<page>_<table>` for pages 262-501
     * https://www.mvs.usace.army.mil/Portals/54/docs/fusrap/docs/FSNCounty_2.pdf
-    * Also created a Cortex Search Service (RAG) to allow for LLM interaction
+    * Also created a Cortex Search Service to allow for LLM interaction
 * **06_moflood1.sql**
     * Flood data from FEMA
     * Data extracted from SHP files and loaded to ST_LOUIS_FLOOD_ZONES table
