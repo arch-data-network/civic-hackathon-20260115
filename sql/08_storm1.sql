@@ -85,17 +85,20 @@ FROM json_noaa_dat;
 
 -- Example 1: Estimate percent damage using Snowflake AI
 with dods as (
-    select degree_of_damage, count(*)
+    select degree_of_damage, comments, count(*)
     from noaa_dat
     group by all
 )
 select
     degree_of_damage,
+    comments,
     AI_COMPLETE(
         'claude-4-sonnet',
         CONCAT(
             'Convert this tornado damage description into a single decimal percentage (0.0 to 1.0) ',
             'representing the severity of structural destruction. Return ONLY the number. ',
-            'Description: ', degree_of_damage))::NUMBER(3,2) AS damage_estimate
+            'Description: ', degree_of_damage, ' + ', comments))::NUMBER(3,2) AS damage_estimate
 from dods
 ;
+
+
