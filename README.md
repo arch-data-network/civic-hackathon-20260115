@@ -228,3 +228,29 @@ select
             'Description: ', degree_of_damage))::NUMBER(3,2) AS damage_estimate
 from dods;
 ```
+
+## Object List
+
+### `ACS_SLC`, `ACS_STL`
+These are American Community Survey responses for the `geo_id` values that represent St. Louis City and St. Louis County.  See example queries and online documentation from the Census / American Community Survey website.
+
+### `CENSUS_LIFE_EXPECTANCY`
+Life expectancy at birth at tract-level granularity.
+
+### `FUSRAP_TABLE_<page>_<table>`
+Each page in the FUSRAP appendix contains a table of data with detailed compound and radiation measurements. Each table on each page of the PDF is extracted into it's own table. You may need to union tables together for tables that span multiple pages.
+
+### `GEOGRAPHY_CHARACTERISTICS`, `GEOGRAPHY_HIERARCHY`
+The GEOGRAPHY tables all come directly from Snowflake's Public Data Free marketplace listing. These tables contain information about various standard geographies include ZIP, tract, etc.
+
+### `NOAA_DAT`
+Final version of cleaned up NOAA data on destruction from the May 16, 2025 EF3 tornado in St. Louis.
+
+### `RADON_TEST_RESULTS`
+Radon testing results from around the St. Louis region.
+
+### `RECA_ZIP_CODES`
+A list of ZIP codes that are eligible for RECA.
+
+### `SLMO_FLOODPLAN`, `ST_LOUIS_FLOOD_ZONES`
+Various data describing the flood risk in the St. Louis region.
