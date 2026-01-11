@@ -10,7 +10,7 @@ use warehouse ARCHDATA_CIVIC_WH;
 use role ARCHDATA_CIVIC_DEV;
 
 -- Create a stage where we can dump the raw files
--- use role ARCHDATA_CIVIC_DEV;
+use role ARCHDATA_CIVIC_DEV;
 CREATE OR REPLACE STAGE ARCHDATA_CIVIC.RAW.SOURCE_FILES
 	DIRECTORY = ( ENABLE = true ) 
 	ENCRYPTION = ( TYPE = 'SNOWFLAKE_SSE' );

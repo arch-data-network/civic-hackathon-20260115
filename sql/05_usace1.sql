@@ -307,7 +307,7 @@ LATERAL FLATTEN(
 CREATE OR REPLACE CORTEX SEARCH SERVICE FUSRAP_SEARCH_SERVICE
   ON chunk_text               
   ATTRIBUTES file_name        
-  WAREHOUSE = COMPUTE_WH      
+  WAREHOUSE = ARCHDATA_CIVIC_WH      
   TARGET_LAG = '1 hour'       
   EMBEDDING_MODEL = 'snowflake-arctic-embed-l-v2.0' 
 AS (

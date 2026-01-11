@@ -93,12 +93,10 @@ select
     degree_of_damage,
     comments,
     AI_COMPLETE(
-        'claude-4-sonnet',
+        'llama3-70b',
         CONCAT(
             'Convert this tornado damage description into a single decimal percentage (0.0 to 1.0) ',
             'representing the severity of structural destruction. Return ONLY the number. ',
             'Description: ', degree_of_damage, ' + ', comments))::NUMBER(3,2) AS damage_estimate
 from dods
 ;
-
-
