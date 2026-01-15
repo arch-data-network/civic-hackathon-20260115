@@ -40,6 +40,9 @@ You can read more about the event here:
     * Storm damage data collected through NOAA and available through the NOAA DAT
     * https://apps.dat.noaa.gov/StormDamage/DamageViewer/?cw=rlx&level=8&center=-81.39,38.54
     * Manually filtered and downloaded and then parsed in Snowflake
+* **09_city1.sql**
+    * Summary of various assistance needs for different St. Louis neighborhoods
+    * Provided by the city
 * **99_reference.sql**
     * Replication of `GEOGRAPHY` tables from Snowflake Public Data
     * Inclusion of all ARCHDATA_CIVIC tables in data share
@@ -254,3 +257,6 @@ A list of ZIP codes that are eligible for RECA.
 
 ### `SLMO_FLOODPLAN`, `ST_LOUIS_FLOOD_ZONES`
 Various data describing the flood risk in the St. Louis region.
+
+### `ACTIONSTL_NEEDS_BY_NEIGHBORHOOD_MAY_AUG_2025`
+Summary of different types of needs in different neighborhoods.  This is a summary of data collected by the city.
