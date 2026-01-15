@@ -43,6 +43,9 @@ You can read more about the event here:
 * **09_city1.sql**
     * Summary of various assistance needs for different St. Louis neighborhoods
     * Provided by the city
+* **10_damage1.sql**
+    * Detailed damage summary data from Microsoft AI for Good program
+    * https://www.arcgis.com/home/item.html?id=604493cabe9d4006b637d42a6a52d04e
 * **99_reference.sql**
     * Replication of `GEOGRAPHY` tables from Snowflake Public Data
     * Inclusion of all ARCHDATA_CIVIC tables in data share
@@ -260,3 +263,6 @@ Various data describing the flood risk in the St. Louis region.
 
 ### `ACTIONSTL_NEEDS_BY_NEIGHBORHOOD_MAY_AUG_2025`
 Summary of different types of needs in different neighborhoods.  This is a summary of data collected by the city.
+
+### `DAMAGE_RESULTS`
+Detailed data from Microsoft AI for Good damage estimates.
